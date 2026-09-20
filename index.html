@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidriera Barva | Soluciones en Vidrio para tu Espacio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --navy-dark:#0d2c47;
+    --navy:#16405f;
+    --navy-light:#2f6690;
+    --teal:#1596a3;
+    --teal-dark:#0f7c88;
+    --whatsapp:#25d366;
+    --gray-bg:#f2f5f7;
+    --gray-line:#dde5ea;
+    --text-dark:#16324a;
+    --text-muted:#6d7f8c;
+    --white:#ffffff;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins', Arial, sans-serif;
+    color:var(--text-dark);
+    background:var(--white);
+    line-height:1.5;
+  }
+  img{display:block; max-width:100%;}
+  a{text-decoration:none; color:inherit;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer; border:none;}
+
+  .container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  .placeholder-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    background:linear-gradient(135deg,#dbe6ec,#c3d3dc);
+    color:#7c8d99;
+    font-size:13px;
+  }
+
+  .script-text{
+    font-family:'Caveat', cursive;
+    font-weight:700;
+  }
+
+  /* ---------- TOP BAR ---------- */
+  .topbar{
+    background:var(--gray-bg);
+    border-bottom:1px solid var(--gray-line);
+    padding:6px 0;
+  }
+  .topbar .container{
+    display:flex;
+    justify-content:flex-end;
+    gap:14px;
+  }
+  .topbar a{
+    color:var(--navy);
+    font-size:14px;
+    width:26px; height:26px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:50%;
+    background:var(--white);
+    border:1px solid var(--gray-line);
+    transition:background .2s, color .2s;
+  }
+  .topbar a:hover{background:var(--teal); color:var(--white);}
+
+  /* ---------- HEADER ---------- */
+  header.main-header{
+    background:var(--white);
+    box-shadow:0 2px 10px rgba(13,44,71,.08);
+    position:sticky; top:0; z-index:50;
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    padding:14px 24px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand .logo-badge{
+    width:52px; height:52px;
+    border-radius:8px;
+    background:linear-gradient(135deg, var(--navy), var(--teal));
+    color:var(--white);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800;
+    font-size:20px;
+    letter-spacing:1px;
+  }
+  .brand .brand-text .name{
+    font-weight:800;
+    font-size:19px;
+    color:var(--navy-dark);
+    line-height:1.1;
+  }
+  .brand .brand-text .tagline{
+    font-size:11px;
+    color:var(--text-muted);
+    letter-spacing:.5px;
+  }
+
+  nav.main-nav ul{
+    display:flex;
+    gap:6px;
+  }
+  nav.main-nav a{
+    display:block;
+    padding:10px 16px;
+    font-weight:500;
+    font-size:15px;
+    color:var(--text-dark);
+    border-radius:6px;
+    transition:background .2s, color .2s;
+  }
+  nav.main-nav a.active,
+  nav.main-nav a:hover{
+    background:var(--navy);
+    color:var(--white);
+  }
+
+  .btn-whatsapp{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:var(--whatsapp);
+    color:var(--white);
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:14px;
+    white-space:nowrap;
+  }
+  .btn-whatsapp i{font-size:18px;}
+  .btn-whatsapp:hover{filter:brightness(1.05);}
+
+  .menu-toggle{
+    display:none;
+    background:none;
+    font-size:24px;
+    color:var(--navy-dark);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:560px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg, var(--navy-dark), var(--navy-light));
+  }
+  .hero-bg{
+    position:absolute;
+    inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    opacity:.55;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(90deg, rgba(13,44,71,.92) 0%, rgba(13,44,71,.55) 45%, rgba(13,44,71,.15) 100%);
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    max-width:620px;
+    color:var(--white);
+    padding:60px 24px;
+  }
+  .hero-eyebrow{
+    font-weight:600;
+    letter-spacing:1px;
+    font-size:14px;
+    color:#bfe0e6;
+    margin-bottom:14px;
+  }
+  .hero-content h1{
+    font-size:44px;
+    font-weight:800;
+    line-height:1.15;
+    margin-bottom:18px;
+  }
+  .hero-content p{
+    font-size:16px;
+    color:#dbe7ee;
+    margin-bottom:28px;
+    max-width:480px;
+  }
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--teal);
+    color:var(--white);
+    padding:14px 26px;
+    border-radius:8px;
+    font-weight:600;
+    font-size:15px;
+    transition:background .2s, transform .2s;
+  }
+  .btn-primary:hover{background:var(--teal-dark); transform:translateY(-1px);}
+
+  .hero-script{
+    position:absolute;
+    right:6%;
+    bottom:8%;
+    z-index:2;
+    color:var(--white);
+    font-size:26px;
+    text-align:right;
+    max-width:220px;
+  }
+
+  /* ---------- FEATURES BAR ---------- */
+  .features{
+    background:var(--white);
+    border-bottom:1px solid var(--gray-line);
+    padding:30px 0;
+  }
+  .features .container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:24px;
+  }
+  .feature-item{
+    flex:1 1 160px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:10px;
+    padding:0 8px;
+  }
+  .feature-item .icon-circle{
+    width:56px; height:56px;
+    border-radius:50%;
+    border:2px solid var(--navy);
+    color:var(--navy);
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px;
+  }
+  .feature-item span{
+    font-weight:600;
+    font-size:13.5px;
+    color:var(--navy-dark);
+    line-height:1.3;
+  }
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .section{padding:70px 0;}
+  .section-heading{
+    text-align:center;
+    margin-bottom:44px;
+  }
+  .section-heading h2{
+    font-size:30px;
+    font-weight:800;
+    color:var(--navy-dark);
+  }
+  .section-heading h2 span{color:var(--teal);}
+  .section-heading p{
+    color:var(--text-muted);
+    font-size:15px;
+    margin-top:8px;
+  }
+  .section-heading.light h2{color:var(--white);}
+  .section-heading.light p{color:#b9cbd7;}
+
+  /* ---------- PRODUCTS ---------- */
+  .products{background:var(--gray-bg);}
+  .products-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .product-card{
+    background:var(--white);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 16px rgba(13,44,71,.08);
+    display:flex;
+    flex-direction:column;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .product-card:hover{transform:translateY(-4px); box-shadow:0 10px 24px rgba(13,44,71,.14);}
+  .product-card .product-img{height:170px;}
+  .product-card .product-body{
+    padding:18px 20px 22px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    flex:1;
+  }
+  .product-card h3{font-size:16px; color:var(--navy-dark); font-weight:700;}
+  .product-card p{font-size:13.5px; color:var(--text-muted); flex:1;}
+  .btn-outline{
+    align-self:flex-start;
+    border:1.5px solid var(--teal);
+    color:var(--teal);
+    padding:8px 18px;
+    border-radius:6px;
+    font-size:13.5px;
+    font-weight:600;
+    transition:background .2s, color .2s;
+  }
+  .btn-outline:hover{background:var(--teal); color:var(--white);}
+
+  /* ---------- GALLERY ---------- */
+  .gallery{
+    background:var(--navy-dark);
+    position:relative;
+  }
+  .gallery-wrap{
+    position:relative;
+  }
+  .gallery-track{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding-bottom:8px;
+    scrollbar-width:none;
+  }
+  .gallery-track::-webkit-scrollbar{display:none;}
+  .gallery-track .gallery-item{
+    flex:0 0 260px;
+    height:190px;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .gallery-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:42px; height:42px;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    color:var(--white);
+    display:flex; align-items:center; justify-content:center;
+    font-size:16px;
+    backdrop-filter:blur(2px);
+    z-index:3;
+  }
+  .gallery-arrow:hover{background:rgba(255,255,255,.3);}
+  .gallery-arrow.prev{left:-10px;}
+  .gallery-arrow.next{right:-10px;}
+
+  /* ---------- INFO / CONTACT ---------- */
+  .info{background:var(--white);}
+  .info .container{
+    display:grid;
+    grid-template-columns:1.1fr 1fr 1fr 1fr;
+    gap:30px;
+  }
+  .info-block h4{
+    font-size:14px;
+    font-weight:700;
+    color:var(--navy-dark);
+    letter-spacing:.5px;
+    margin-bottom:10px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .info-block h4 i{color:var(--teal);}
+  .info-block p{font-size:14px; color:var(--text-muted); margin-bottom:6px;}
+  .map-thumb{
+    height:110px;
+    border-radius:8px;
+    margin:10px 0;
+    overflow:hidden;
+  }
+  .link-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13px;
+    font-weight:600;
+    color:var(--teal);
+  }
+  .contact-line{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    color:var(--text-dark);
+    margin-bottom:8px;
+    font-weight:500;
+  }
+  .contact-line i{color:var(--teal); width:18px;}
+  .info-block.script-block{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:right;
+  }
+  .info-block.script-block p{
+    font-size:26px;
+    color:var(--navy);
+    line-height:1.2;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--navy-dark);
+    color:#cfe0ea;
+    padding-top:40px;
+  }
+  .footer-top{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding-bottom:30px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .footer-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .footer-brand .name{font-weight:800; color:var(--white); font-size:17px;}
+  .footer-brand .tagline{font-size:11px; color:#9fb7c5;}
+  .footer-links{
+    display:flex;
+    gap:10px;
+    font-size:14px;
+    color:#cfe0ea;
+  }
+  .footer-social{
+    display:flex;
+    gap:10px;
+  }
+  .footer-social a{
+    width:34px; height:34px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.25);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--white);
+    transition:background .2s;
+  }
+  .footer-social a:hover{background:var(--teal); border-color:var(--teal);}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:12.5px;
+    color:#8fa8b8;
+    padding:18px 0;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:960px){
+    .products-grid{grid-template-columns:repeat(2,1fr);}
+    .info .container{grid-template-columns:1fr 1fr;}
+    .hero-script{display:none;}
+  }
+  @media (max-width:768px){
+    nav.main-nav{
+      position:absolute;
+      top:100%; left:0; right:0;
+      background:var(--white);
+      box-shadow:0 8px 16px rgba(13,44,71,.1);
+      display:none;
+      flex-direction:column;
+      padding:10px;
+    }
+    nav.main-nav.open{display:flex;}
+    nav.main-nav ul{flex-direction:column;}
+    .menu-toggle{display:block;}
+    .btn-whatsapp span{display:none;}
+    .hero-content h1{font-size:32px;}
+    .products-grid{grid-template-columns:1fr;}
+    .info .container{grid-template-columns:1fr;}
+    .info-block.script-block{justify-content:flex-start; text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  
+
+  <!-- ===== HEADER ===== -->
+  <header class="main-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo-badge">VB</div>
+        <div class="brand-text">
+          <div class="name">VIDRIERA BARVA</div>
+          <div class="tagline">SOLUCIONES EN VIDRIO PARA TU ESPACIO</div>
+        </div>
+      </div>
+
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="#inicio" class="active">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex; align-items:center; gap:10px;">
+          <a href="https://wa.me/50685162464?text=Hola%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n" class="btn-whatsapp" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>COTIZA POR<br>WhatsApp</span>
+          </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <img src="images/hero-sala-vidrio.jpg" alt="Sala con puertas de vidrio corredizas" class="hero-bg">
+    <div class="hero-content">
+      <div class="hero-eyebrow">IDEAS EN VIDRIO, ESPACIOS QUE INSPIRAN</div>
+      <h1>EL VIDRIO QUE HACE LA DIFERENCIA</h1>
+      <p>En Vidriera Barva te ofrecemos soluciones en vidrio con la más alta calidad, diseño y acabados personalizados para hogares, oficinas y proyectos comerciales.</p>
+  
+    </div>
+    <div class="hero-script script-text">Más que vidrio,<br>creamos espacios</div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features">
+    <div class="container">
+      <div class="feature-item">
+        <div class="icon-circle"><i class="fa-solid fa-award"></i></div>
+        <span>CALIDAD<br>GARANTIZADA</span>
+      </div>
+      <div class="feature-item">
+        <div class="icon-circle"><i class="fa-solid fa-ruler-combined"></i></div>
+        <span>DISEÑOS<br>A LA MEDIDA</span>
+      </div>
+      <div class="feature-item">
+        <div class="icon-circle"><i class="fa-solid fa-comments"></i></div>
+        <span>ASESORÍA<br>PERSONALIZADA</span>
+      </div>
+      <div class="feature-item">
+        <div class="icon-circle"><i class="fa-regular fa-clock"></i></div>
+        <span>CUMPLIMIENTO<br>EN TIEMPOS</span>
+      </div>
+      <div class="feature-item">
+        <div class="icon-circle"><i class="fa-solid fa-handshake"></i></div>
+        <span>ATENCIÓN<br>DE CONFIANZA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTOS ===== -->
+  <section class="section products" id="productos">
+    <div class="container">
+      <div class="section-heading">
+        <h2>NUESTROS <span>PRODUCTOS</span></h2>
+        <p>Soluciones en vidrio para cada necesidad</p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="images/prod-puertas-corredizas.jpg" alt="Puertas corredizas de vidrio" class="product-img placeholder-img">
+          <div class="product-body">
+            <h3>Puertas corredizas</h3>
+            <p>Modernas, seguras y funcionales.</p>
+            <a href="#contacto" class="btn-outline">Ver más</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/prod-ventanas-vidrio.jpg" alt="Ventanas de vidrio" class="product-img placeholder-img">
+          <div class="product-body">
+            <h3>Ventanas de vidrio</h3>
+            <p>Diseño y elegancia para tu hogar o negocio.</p>
+            <a href="#contacto" class="btn-outline">Ver más</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/prod-puertas-bano.jpg" alt="Puertas para baño" class="product-img placeholder-img">
+          <div class="product-body">
+            <h3>Puertas para baño</h3>
+            <p>Variedad de estilos como Eolo y más.</p>
+            <a href="#contacto" class="btn-outline">Ver más</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/prod-espejos.jpg" alt="Espejos a la medida" class="product-img placeholder-img">
+          <div class="product-body">
+            <h3>Espejos</h3>
+            <p>A la medida y con excelentes acabados.</p>
+            <a href="#contacto" class="btn-outline">Ver más</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/prod-vidrio-templado.jpg" alt="Vidrio templado" class="product-img placeholder-img">
+          <div class="product-body">
+            <h3>Vidrio templado</h3>
+            <p>Seguridad y resistencia en cada proyecto.</p>
+            <a href="#contacto" class="btn-outline">Ver más</a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/prod-urnas.jpg" alt="Urnas de vidrio" class="product-img placeholder-img">
+          <div class="product-body">
+            <h3>Todo tipo de urnas</h3>
+            <p>Diseños personalizados para cada necesidad.</p>
+            <a href="#contacto" class="btn-outline">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALERÍA ===== -->
+  <section class="section gallery" id="galeria">
+    <div class="container">
+      <div class="section-heading light">
+        <h2 style="color:#fff;">GALERÍA DE <span style="color:var(--teal);">TRABAJOS</span></h2>
+        <p>Proyectos que reflejan nuestra calidad</p>
+      </div>
+
+      <div class="gallery-wrap">
+        <button class="gallery-arrow prev" id="galleryPrev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-item"><img src="images/galeria-1.jpg" alt="Proyecto de vidrio 1" class="placeholder-img"></div>
+          <div class="gallery-item"><img src="images/galeria-2.jpg" alt="Proyecto de vidrio 2" class="placeholder-img"></div>
+          <div class="gallery-item"><img src="images/galeria-3.jpg" alt="Proyecto de vidrio 3" class="placeholder-img"></div>
+          <div class="gallery-item"><img src="images/galeria-4.jpg" alt="Proyecto de vidrio 4" class="placeholder-img"></div>
+          <div class="gallery-item"><img src="images/galeria-5.jpg" alt="Proyecto de vidrio 5" class="placeholder-img"></div>
+        </div>
+
+        <button class="gallery-arrow next" id="galleryNext" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFO / CONTACTO ===== -->
+  <section class="section info" id="contacto">
+    <div class="container">
+      <div class="info-block">
+        <h4><i class="fa-solid fa-location-dot"></i> UBICACIÓN</h4>
+        <p>Barva de Heredia</p>
+        <div class="map-thumb">
+            <img src="images/maps.png"
+                 alt="Mapa de ubicación en Barva de Heredia"
+                 class="placeholder-img">
+        </div>
+        <a href="https://maps.app.goo.gl/bT3VoqjTQbSDcfch9" target="_blank" rel="noopener" class="link-chip"><i class="fa-solid fa-location-dot"></i> Ver en Google Maps</a>
+      </div>
+
+      <div class="info-block">
+        <h4><i class="fa-regular fa-clock"></i> HORARIO</h4>
+        <p>Lunes a viernes</p>
+        <p>7:30 a.m. – 12:00 m.</p>
+        <p>1:00 p.m. – 5:00 p.m.</p>
+      </div>
+
+      <div class="info-block">
+        <h4><i class="fa-solid fa-phone"></i> CONTÁCTANOS</h4>
+        <div class="contact-line"><i class="fa-brands fa-whatsapp"></i> 8516-2464</div>
+        <div class="contact-line"><i class="fa-solid fa-phone"></i> 2560-5543</div>
+      </div>
+
+      <div class="info-block script-block">
+        <p class="script-text">¡Hacemos realidad<br>tus ideas!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-badge">VB</div>
+          <div>
+            <div class="name">VIDRIERA BARVA</div>
+            <div class="tagline">SOLUCIONES EN VIDRIO PARA TU ESPACIO</div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <span>Diseño</span> | <span>Calidad</span> | <span>Confianza</span>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://www.facebook.com/vidrios.aluminiosbarva" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Vidriera Barva. Todos los derechos reservados.</span>
+        <span>El vidrio transforma espacios.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
+
+    // Close mobile menu after clicking a link
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mainNav.classList.remove('open'));
+    });
+
+    // Gallery carousel arrows
+    const track = document.getElementById('galleryTrack');
+    const scrollAmount = 280;
+    document.getElementById('galleryPrev').addEventListener('click', () => {
+      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+    document.getElementById('galleryNext').addEventListener('click', () => {
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
